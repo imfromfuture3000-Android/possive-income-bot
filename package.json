@@ -1,0 +1,19 @@
+{
+  "name": "passive-income-bot",
+  "version": "1.0.0",
+  "description": "Gasless passive income bot from Year 3500",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "build": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.0",
+    "@gelatonetwork/relay-context": "^1.0.0",
+    "dotenv": "^16.0.3"
+  }
+}
