@@ -1,0 +1,11 @@
+passive-income-bot/
+├── contracts/
+│   ├── core/
+│   │   └── UniversalVault.sol
+│   └── bots/
+│       └── $AUTOGEN.sol
+├── scripts/
+│   └── deploy.js
+├── hardhat.config.js
+├── package.json
+└── .env
