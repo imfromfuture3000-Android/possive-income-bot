@@ -1,0 +1,30 @@
+name: Auto-Deploy Passive Income
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Compile contracts
+        run: npx hardhat compile
+
+      - name: Deploy to Base Sepolia
+        run: npx hardhat run scripts/deploy.js --network base-sepolia
+        env:
+          OWNER_ADDRESS: ${{ secrets.OWNER_ADDRESS }}
+          DAI_TOKEN: ${{ secrets.DAI_TOKEN }}
+          FORWARDER: ${{ secrets.FORWARDER }}
+          BASE_SEPOLIA_RPC_URL: ${{ secrets.BASE_SEPOLIA_RPC_URL }}
+          GELATO_API_KEY: ${{ secrets.GELATO_API_KEY }}
