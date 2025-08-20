@@ -2,7 +2,7 @@ name: Deploy Cryptonaut Vaults
 
 on:
   push:
-    branches:
+    branches: 
       - main
   workflow_dispatch:
 
